@@ -309,11 +309,12 @@
     border: 1px solid var(--border);
   }
 
-  .btn-ghost:hover {
+  .btn-ghost:hover:not(:disabled) {
     border-color: var(--pink);
     color: var(--pink);
     transform: translateY(-1px);
   }
+  .btn-ghost:disabled { opacity: 0.38; cursor: default; }
 
   .btn-sm { padding: 9px 18px; font-size: 12px; }
 
@@ -938,7 +939,7 @@
       <button class="btn btn-ghost btn-sm" onclick="prevQuestion()">← Anterior</button>
       <button class="btn btn-ghost btn-sm" onclick="resetQuestion()">↺ Resetar</button>
       <button class="btn btn-ghost btn-sm" onclick="showAnswer()">👁 Ver resposta</button>
-      <button class="btn-dontknow" onclick="markDontKnow()" id="btnDontKnow">🤍 Não sei</button>
+      <button class="btn btn-ghost btn-sm" onclick="markDontKnow()" id="btnDontKnow" style="gap:6px;">🤍 Não sei</button>
       <div class="spacer"></div>
       <span class="nav-counter" id="navCounter"></span>
       <button class="btn btn-primary btn-sm" onclick="nextQuestion()" id="btnNext">Próxima →</button>
